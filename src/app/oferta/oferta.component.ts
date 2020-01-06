@@ -11,6 +11,8 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class OfertaComponent implements OnInit {
 
+  public oferta: Oferta;
+
   constructor(
     private route: ActivatedRoute,
     private ofertaService: OfertasService
@@ -19,7 +21,8 @@ export class OfertaComponent implements OnInit {
   ngOnInit() {
     this.ofertaService.getOfertasById(this.route.snapshot.params['id'])
       .then((oferta: Oferta) => {
-        console.log(oferta)
+        console.log(oferta);
+        this.oferta = oferta;
     })
     /*this.route.params.subscribe((param: any) => {
       console.log(param.id);
