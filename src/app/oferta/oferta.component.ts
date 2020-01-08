@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
+import { interval, Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-oferta',
@@ -21,12 +22,20 @@ export class OfertaComponent implements OnInit {
   ngOnInit() {
     this.ofertaService.getOfertasById(this.route.snapshot.params['id'])
       .then((oferta: Oferta) => {
-        console.log(oferta);
         this.oferta = oferta;
     })
-    /*this.route.params.subscribe((param: any) => {
-      console.log(param.id);
+    
+    /*let tempo = interval(500);
+    tempo.subscribe((intervalo: number) => {
+      console.log(intervalo)
     })*/
+
+    let meuObservador = Observable.create((observer: Observer<string>) => {
+      observer.next('Primeiro evento da stream');
+      observer.next('Segundo evento da stream');
+    })
+
+    meuObservador.subscribe((resultado: any) => console.log(resultado));
   }
 
 }
