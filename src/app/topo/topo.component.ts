@@ -23,6 +23,7 @@ export class TopoComponent implements OnInit {
     this.ofertas
       .subscribe(
         (ofertas: Oferta[]) => console.log(ofertas),
-        (erro: any) => console.log('Erro status: ', erro.status))}
+        (erro: any) => console.log('Erro status: ', erro.status),
+        () => console.log('Fluxo de eventos completo'))}
 
 }
