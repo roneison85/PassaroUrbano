@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Oferta } from './shared/oferta.model'
-import { Injectable } from '@angular/core'
-import { URL_API } from './app.api';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+
+import { Oferta } from './shared/oferta.model';
+import { URL_API } from './app.api';
 
 @Injectable()
 export class OfertasService {
