@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { Oferta } from '../shared/oferta.model';
-import { switchMap, debounceTime, distinct, catchError, distinctUntilChanged } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { switchMap, debounceTime, catchError, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-topo',
