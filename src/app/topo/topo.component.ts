@@ -21,12 +21,16 @@ export class TopoComponent implements OnInit {
     this.ofertas = this.subjectPesquisa
       .pipe(
         switchMap((termo: string) => {
+          console.log('requisicao http da api')
           return this.ofertasService.pesquisaOfertas(termo)
         })
       )
+
+    this.ofertas.subscribe((ofertas: Oferta[]) => console.log(ofertas))
   }
 
   public pesquisar(termoDaBusca: string): void {
+    console.log('keyup caracter: ', termoDaBusca)
     this.subjectPesquisa.next(termoDaBusca)
   }
 
