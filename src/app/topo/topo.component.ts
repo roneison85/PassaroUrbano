@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Observable, Subject } from 'rxjs';
 import { Oferta } from '../shared/oferta.model';
-import { switchMap, debounceTime, distinct } from 'rxjs/operators';
+import { switchMap, debounceTime, distinct, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Component({
@@ -32,6 +32,10 @@ export class TopoComponent implements OnInit {
           return this.ofertasService.pesquisaOfertas(termo);
         })
       )
+      .pipe(catchError((err: any) => {
+        console.log("Erro: ", err);
+        return of<Oferta[]>([]);
+      }))
 
     this.ofertas.subscribe((ofertas: Oferta[]) => console.log(ofertas))
   }
