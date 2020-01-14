@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class OrdemCompraComponent implements OnInit {
 
   public endereco: string = '';
-  public numero: number;
+  public numero: string;
   public complemento: string = '';
   public formaPagamento: string = '';
+
+  // Controles de validação de campos
+  public enderecoValido: boolean;
+  public numeroValido: boolean;
+  public complementoValido: boolean;
+  public formaPagamentoValido: boolean;
 
   constructor() { }
 
@@ -18,23 +24,36 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public atualizaEndereco(endereco: string): void {
-    console.log('Endereco: ', endereco);
     this.endereco = endereco;
+
+    if(this.endereco.length > 3){
+      this.enderecoValido = true;
+    }else{
+      this.enderecoValido = false;
+    }
   }
 
-  public atualizaNumero(numero: number): void {
-    console.log('Numero: ', numero);
+  public atualizaNumero(numero: string): void {
     this.numero = numero;
+
+    if(this.numero.length > 0){
+      this.numeroValido = true;
+    }else{
+      this.numeroValido = false;
+    }
   }
 
   public atualizaComplemento(complemento: string): void {
-    console.log('Complemento: ', complemento);
     this.complemento = complemento;
   }
 
   public atualizaFormaPagamento(formaPagamento: string): void {
-    console.log('Forma de Pagamento: ', formaPagamento);
     this.formaPagamento = formaPagamento;
+    if(this.formaPagamento.length > 0){
+      this.formaPagamentoValido = true;
+    }else{
+      this.formaPagamentoValido = false;
+    }
   }
 
 }
