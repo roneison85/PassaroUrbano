@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrdemCompraService } from '../ordem-compra.service'
-import { Pedido } from '../shared/pedido.model'
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -11,14 +10,16 @@ import { NgForm } from '@angular/forms';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  @ViewChild('formulario', {static: false}) public formulario: NgForm;
+
   constructor(private ordemCompraService: OrdemCompraService) { }
 
   ngOnInit() {
     
   }
 
-  public confirmarCompra(formulario: NgForm){
-    console.log(formulario);
+  public confirmarCompra(){
+    console.log(this.formulario);
   }
 
 }
