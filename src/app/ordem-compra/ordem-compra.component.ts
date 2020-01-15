@@ -11,6 +11,7 @@ import { Pedido } from '../shared/pedido.model';
 export class OrdemCompraComponent implements OnInit {
 
   public pedido: Pedido;
+  public idPedidoCompra: number; 
 
   public endereco: string = '';
   public numero: string;
@@ -92,7 +93,11 @@ export class OrdemCompraComponent implements OnInit {
 
   public confirmarCompra(): void {
     this.pedido = new Pedido(this.endereco, this.numero, this.complemento, this.formaPagamento);
-    this.ordemCompraService.efetivarCompra(this.pedido).subscribe();
+    this.ordemCompraService.efetivarCompra(this.pedido)
+      .subscribe((resposta: any) => {
+        this.idPedidoCompra = resposta.id;
+        console.log('ID DO PEDIDO: ', this.idPedidoCompra)
+      });
   }
 
 }
