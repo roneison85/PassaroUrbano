@@ -92,7 +92,7 @@ export class OrdemCompraComponent implements OnInit {
 
   public confirmarCompra(): void {
     this.pedido = new Pedido(this.endereco, this.numero, this.complemento, this.formaPagamento);
-    this.ordemCompraService.efetivarCompra(this.pedido);
+    this.ordemCompraService.efetivarCompra(this.pedido).subscribe();
   }
 
 }
