@@ -21,6 +21,8 @@ export class OrdemCompraService {
         JSON.stringify(pedido),
         options
       )
-      map((resposta: Response) => console.log(resposta.json))
+      .pipe(map((resposta: Response) => {
+        console.log(resposta)
+      }))
   }
 }
