@@ -71,13 +71,16 @@
         <div class="form-group col-md-6">
           <input 
             type="text" 
-            class="form-control is-invalid" 
+            class="form-control" 
             placeholder="Endereço" 
             autocomplete="off" 
             minlength="5" 
             required
             name="endereco"
             ngModel
+            required
+            minlength="5"
+            maxlength="120"
           >
           <small class="form-text text-danger">Endereço inválido</small>
         </div>
@@ -85,13 +88,16 @@
         <div class="form-group col-md-2">
           <input 
             type="text" 
-            class="form-control is-valid" 
+            class="form-control" 
             placeholder="Número" 
             autocomplete="off" 
             minlength="1"
             required
             name="numero"
             ngModel
+            required
+            minlength="1"
+            maxlength="20"
           >
           <small class="form-text text-success">Ok</small>
         </div>
@@ -117,9 +123,10 @@
           
         <div class="form-group col-md-3">
           <select 
-            class="form-control is-invalid"
+            class="form-control"
             name="formaPagamento"
             ngModel
+            required
           >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
