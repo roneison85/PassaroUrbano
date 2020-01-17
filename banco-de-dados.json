@@ -186,6 +186,26 @@
     }
   ],
   "pedidos": [
-    
+    {
+      "id": 1,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "CASA",
+      "formaPagamento": "dinheiro"
+    },
+    {
+      "id": 2,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "CASA",
+      "formaPagamento": "dinheiro"
+    },
+    {
+      "id": 3,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "CASA 1",
+      "formaPagamento": "debito"
+    }
   ]
 }
