@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -42,7 +43,8 @@ registerLocaleData(ptBr)
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    //FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt-Br'} ],
