@@ -213,6 +213,27 @@
       "numero": "40",
       "complemento": "CASA 1",
       "formaPagamento": "dinheiro"
+    },
+    {
+      "id": 5,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "CASA",
+      "formaPagamento": "debito"
+    },
+    {
+      "id": 6,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "XASA",
+      "formaPagamento": "debito"
+    },
+    {
+      "id": 7,
+      "endereco": "AVENIDA PERIMETRAL",
+      "numero": "40",
+      "complemento": "CASA 10",
+      "formaPagamento": "debito"
     }
   ]
 }

@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class OrdemCompraComponent implements OnInit {
 
-  public idPedido: number;
+  public idPedidoCompra: number;
 
   public formulario: FormGroup = new FormGroup({
     'endereco': new FormControl(null, [ Validators.required, Validators.minLength(3), Validators.maxLength(60) ]),
@@ -42,8 +42,7 @@ export class OrdemCompraComponent implements OnInit {
       )
       this.ordemCompraService.efetivarCompra(pedido)
         .subscribe((pedido: Pedido) => {
-          console.log('Pedido cadastrado com sucesso! ID do pedido: ', pedido.id)
-          this.idPedido = pedido.id;
+          this.idPedidoCompra = pedido.id;
         })
     }
   }
