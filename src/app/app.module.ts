@@ -22,6 +22,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { DescricaoReduzida } from './utils/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+import CarrinhoService from './carrinho.service';
 
 registerLocaleData(ptBr)
 
@@ -47,7 +48,7 @@ registerLocaleData(ptBr)
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'pt-Br'} ],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt-Br'}, CarrinhoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

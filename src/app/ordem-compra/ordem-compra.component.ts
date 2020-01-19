@@ -8,7 +8,7 @@ import CarrinhoService from '../carrinho.service';
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
   styleUrls: ['./ordem-compra.component.css'],
-  providers: [ OrdemCompraService, CarrinhoService ]
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class OrdemCompraComponent implements OnInit {
     private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
-    console.log(this.carrinhoService.exibirItens());
+    console.log('Array de ItemCarrinho: ', this.carrinhoService.exibirItens());
   }
 
   public confirmarCompra(): void {
