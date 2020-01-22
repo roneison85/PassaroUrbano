@@ -36,6 +36,22 @@ class CarrinhoService {
         });
         return total;
     }
+
+    adicionarQuantidade(itemCarrinho: ItemCarrinho): void {
+        let itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
+
+        if(itemCarrinhoEncontrado){
+            itemCarrinhoEncontrado.quantidade += 1;
+        }
+    }
+
+    diminuirQuantidade(itemCarrinho: ItemCarrinho): void {
+        let itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
+
+        if(itemCarrinhoEncontrado){
+            itemCarrinhoEncontrado.quantidade -= 1;
+        }
+    }
 }
 
 export default CarrinhoService;
