@@ -52,4 +52,13 @@ export class OrdemCompraComponent implements OnInit {
         })
     }
   }
+
+  totalCarrinhoCompras() : number {
+    let total : number = 0;
+
+    this.itensCarrinho.map((item: ItemCarrinho) => {
+      total = total + (item.valor * item.quantidade);
+    });
+    return total;
+  }
 }

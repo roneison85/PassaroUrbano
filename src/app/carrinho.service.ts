@@ -27,6 +27,15 @@ class CarrinhoService {
         }
         
     }
+
+    totalCarrinhoCompras() : number {
+        let total : number = 0;
+
+        this.itens.map((item: ItemCarrinho) => {
+            total = total + (item.valor * item.quantidade);
+        });
+        return total;
+    }
 }
 
 export default CarrinhoService;
