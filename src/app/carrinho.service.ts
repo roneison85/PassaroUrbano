@@ -1,7 +1,9 @@
+import { Injectable } from '@angular/core';
 import { ItemCarrinho } from './shared/item-carrinho.model';
 import { Oferta } from './shared/oferta.model';
 
-class CarrinhoService {
+@Injectable()
+export class CarrinhoService {
     public itens: ItemCarrinho[] = [];
 
     public exibirItens() : ItemCarrinho[] {
@@ -61,5 +63,3 @@ class CarrinhoService {
         this.itens = [];
     }
 }
-
-export default CarrinhoService;
